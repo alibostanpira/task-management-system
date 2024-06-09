@@ -1,0 +1,35 @@
+@if (isNewTaskClick) {
+  <app-new-task
+    [openAddNewTask]="addTaskFromTasks"
+    (isCancelClick)="onClickCancelTask()"
+    (addNewTask)="onSubmitTask($event)"
+  />
+}
+<section id="tasks">
+  <header>
+    <div>
+      <img [src]="imgPath()" [alt]="user().name">
+      <h2>
+        <p>
+          {{ user().name }}
+          <br>
+          has {{ selectedTasksForUser.length }} incomplete task(s).
+        </p>
+      </h2>
+    </div>
+    <menu>
+      <button (click)="onClickAddTask()"><h2>+</h2></button>
+    </menu>
+  </header>
+  <ul>
+    @for (task of selectedTasksForUser; track task.id) {
+      <li>
+        <app-task
+          [task]="task"
+          (complete)="onCompleteTask($event)"
+          (updateTask)="onUpdateTask($event)"
+        />
+      </li>
+    }
+  </ul>
+</section>

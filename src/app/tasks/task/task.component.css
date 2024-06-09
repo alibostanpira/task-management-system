@@ -1,0 +1,41 @@
+article {
+  padding: 1rem;
+  color: #ffffff;
+  background-color: #ff1840;
+  border-radius: 4px;
+}
+
+h2 {
+  margin: 0;
+}
+
+time {
+  color: #ffffff;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.actions button {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #170519;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin-left: 0.5rem; /* Adjust this value for desired spacing */
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #170519;
+  color: #ff1840;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}

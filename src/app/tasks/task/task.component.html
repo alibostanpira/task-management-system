@@ -1,0 +1,19 @@
+@if (isUpdateClicked) {
+  <app-new-task
+    [openAddNewTask]="updateCurrentTask"
+    (isCancelClick)="onClickCancelTask()"
+    (addNewTask)="onSubmitTask($event)"
+    [title]="title"
+    [summary]="summary"
+    [dueDate]="dueDate"
+  />
+}
+<article>
+  <h2>{{ task().title }}</h2>
+  <time>{{ task().dueDate }}</time>
+  <p>{{ task().summary }}</p>
+  <p class="actions">
+    <button (click)="onUpdateTask()">Update</button>
+    <button (click)="onCompleteTask()">Complete</button>
+  </p>
+</article>
